@@ -4,7 +4,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/neu-vi/SportsSloMo?style=social)](https://github.com/neu-vi/SportsSloMo)
 [![Demo views](https://img.shields.io/youtube/views/FNMqoETB1sU)](https://www.youtube.com/watch?v=FNMqoETB1sU)
 
-**This is the official repository of SportsSloMo**
+**This is the official repository of SportsSloMo (Human-centric Video Frame Interpolation)**
 
 The code will be released before September 8, 2023.
 
