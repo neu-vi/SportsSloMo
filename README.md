@@ -12,7 +12,7 @@ The code will be released before September 8, 2023.
 
 ## Introduction
 
-<center><img src="figures/sportsquali.png" width="50%"></center>
+<center><img src="figures/sportsquali.png" width="60%"></center>
 
 ## Data
 The data can be downloaded following the instructions on the project webpage: [https://neu-vi.github.io/SportsSlomo/#Data](https://neu-vi.github.io/SportsSlomo/#Data).
