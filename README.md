@@ -111,6 +111,12 @@ Then download our split files for training/testing from [link](https://drive.goo
 bash train_SportsSloMo.sh
 ```
 
+### Benchmark
+TODO.
+
+### Demo
+TODO.
+
 
 ## HumanLoss
 
@@ -135,10 +141,8 @@ mkdir checkpoints
 
 # Install Yolov8
 pip install ultralytics
-## Download ckpt to this directory [link](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt)
 
-
-python scripts/...
+python extract_keypoints.py
 ```
 
 #### Segmentation data
@@ -148,13 +152,14 @@ cd Mask2Former
 mkdir checkpoints
 # download model to this directory [link](https://dl.fbaipublicfiles.com/maskformer/mask2former/coco/panoptic/maskformer2_swin_large_IN21k_384_bs16_100ep/model_final_f07440.pkl)
 
-python scripts/...
 ```
 
 ### Training
+TODO.
 
-### Testing
 
+### Acknowledgement
+Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EBME), [XVFI](https://github.com/JihyongOh/XVFI/tree/main#Test), [RIFE](https://github.com/megvii-research/ECCV2022-RIFE) and [softmax-splatting](https://github.com/sniklaus/softmax-splatting). We also borrow code from [Mask2Former](https://github.com/facebookresearch/Mask2Former), [YOLOv8](https://github.com/ultralytics/ultralytics), [ViTPose_unofficial](https://github.com/jaehyunnn/ViTPose_pytorch), [ViTPose](https://github.com/ViTAE-Transformer/ViTPose). We sincerely thanks those authors for their great works. If you use our codes, please also consider cite their nice works.
 
 <!-- **Reference**:   -->
 ## Reference
