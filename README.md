@@ -15,9 +15,9 @@ We provide the video clips along with the code and trained weights for SportsSlo
 We propose a challenging dataset consisting of high-resolution (≥720p) sports videos with careful curation, tailored for human-centric scenarios. Our dataset covers 22 various sports categories with different content and motion patterns, including hockey, base- ball, skating, basketball, running, volleyball, etc.
 
 ## Table of Contents
-1. [SportsSloMo Dataset](#SportsSloMoDataset)
+1. [SportsSloMo Dataset](#SportsSloMo Dataset)
 1. [Requirements](#Requirements)
-1. [Human-aware Loss Terms](#Human-awareLossTerms)
+1. [Human-aware Loss Terms](#Human-aware Loss Terms)
 1. [Reference](#Reference)
 1. [Contact](#Contact)
 
