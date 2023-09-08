@@ -12,7 +12,7 @@ We provide the video clips along with the code and trained weights for SportsSlo
 
 ### Examples of the sports scenes in SportsSloMo 
 <center><img src="figures/sportsquali.png" width="100%"></center>
-We propose a challenging dataset consisting of high-resolution (≥720p) sports videos with careful curation, tailored for human-centric scenarios. Our dataset covers 22 various sports categories with different content and motion patterns, including hockey, base- ball, skating, basketball, running, volleyball, etc.
+We propose a challenging dataset consisting of high-resolution (≥720p) sports videos with careful curation, tailored for human-centric scenarios. Our dataset covers 22 various sports categories with different content and motion patterns, including hockey, baseball, skating, basketball, running, volleyball, etc.
 
 ## Table of Contents
 1. [SportsSloMo Dataset](#Dataset)
@@ -104,12 +104,13 @@ cd SportsSloMo_EBME
 mkdir splits
 ```
 
-Then download our split files for training/testing from [link](https://drive.google.com/file/d/1qRaJ0i6z0z8pP8fAKjGYljCg4KZMxp6m/view?usp=sharing) to splits/ folder.
+Then download our split files for training/testing from this [link](https://drive.google.com/file/d/1qRaJ0i6z0z8pP8fAKjGYljCg4KZMxp6m/view?usp=sharing) to splits/ folder.
 
 ### Train
 ```
 bash train_SportsSloMo.sh
 ```
+Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
 ### Benchmark
 TODO.
@@ -142,6 +143,7 @@ mkdir checkpoints
 # Install Yolov8
 pip install ultralytics
 
+# Extract keypoints for auxiliary loss terms
 python extract_keypoints.py
 ```
 
