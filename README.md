@@ -17,6 +17,7 @@ We propose a challenging dataset consisting of high-resolution (≥720p) sports 
 ## Table of Contents
 1. [SportsSloMo Dataset](#Dataset)
 1. [Requirements](#Requirements)
+1. [Video Frame Interpolation](#VideoFrameInterpolation)
 1. [Human-aware Loss Terms](#HumanLoss)
 1. [Reference](#Reference)
 1. [Contact](#Contact)
@@ -48,7 +49,7 @@ cd SportsSloMo_video
 unzip sportsslomo_video_seqs.zip
 
 ## Extract frames for each clip
-cd ./SportsSloMo
+cd SportsSloMo_EBME
 python scripts/extract_frames.py
 ```
 
@@ -64,7 +65,7 @@ Create a conda environment and install dependencies:
 
 ```
 git clone https://github.com/neu-vi/SportsSloMo.git
-cd SportsSloMo
+cd SportsSloMo_EBME
 
 conda create --name SportsSloMo python=3.8
 conda activate SportsSloMo
@@ -94,9 +95,26 @@ sh make.sh
 
 ```
 
+## VideoFrameInterpolation
+
+We provide intructions and code for conducting Video Frame Interpolation on our SportsSloMo dataset using the baseline [EBME](https://github.com/srcn-ivl/EBME) as example.
+
+```
+cd SportsSloMo_EBME
+mkdir splits
+```
+
+Then download our split files for training/testing from [link](https://drive.google.com/file/d/1qRaJ0i6z0z8pP8fAKjGYljCg4KZMxp6m/view?usp=sharing) to splits/ folder.
+
+### Train
+```
+bash train_SportsSloMo.sh
+```
+
+
 ## HumanLoss
 
-TO improve the existing video frame interpolation models on our human-centric SportsSloMo benchmark, we introduce two loss terms considering the human-aware priors. We propose loss terms based on human segmentation in the panoptic setting and human keypoints estimation as extra supervision for intermediate frame synthesis.
+To improve the existing video frame interpolation models on our human-centric SportsSloMo benchmark, we introduce two loss terms considering the human-aware priors. We propose loss terms based on human segmentation in the panoptic setting and human keypoints estimation as extra supervision for intermediate frame synthesis.
 
 ### Pipeline overview
 <center><img src="figures/pipeline.png" width="100%"></center>
@@ -109,7 +127,6 @@ We provide scripts and instructions to acquire ground-truth detected keypoints a
 
 #### Keypoint data
 ```
-
 # Install ViTPose_pytorch 
 git clone https://github.com/jaehyunnn/ViTPose_pytorch.git
 cd ViTPose_pytorch
