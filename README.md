@@ -72,11 +72,26 @@ conda activate SportsSloMo
 # Install the according versions of torch and torchvision
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 
+# Install required packages 
+pip install -U opencv-python
+pip install -r requirements.txt
+
 # Install the according version of CuPy
 pip install cupy_cuda113==10.6.0
 
-# Install required packages 
-pip install -U opencv-python
+## Install packages for Mask2Former
+# Install detectron2, note that gcc & g++ ≥ 5.4 are required.
+pip install ninja
+git clone https://github.com/facebookresearch/detectron2.git
+cd detectron2
+pip install -e .
+# Install Mask2Former
+cd ..
+git clone https://github.com/facebookresearch/Mask2Former.git
+cd Mask2Former
+cd mask2former/modeling/pixel_decoder/ops
+sh make.sh
+
 ```
 
 ## Human-aware Loss Terms
@@ -94,11 +109,28 @@ We provide scripts and instructions to acquire ground-truth detected keypoints a
 
 #### Keypoint data
 ```
+
+# Install ViTPose_pytorch 
+git clone https://github.com/jaehyunnn/ViTPose_pytorch.git
+cd ViTPose_pytorch
+mkdir checkpoints
+# download model to this directory [link](https://1drv.ms/u/s!AimBgYV7JjTlgTBm3dCVmBUbHYT6?e=fHUrTq)
+
+# Install Yolov8
+pip install ultralytics
+## Download ckpt to this directory [link](https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8n.pt)
+
+
 python scripts/...
 ```
 
 #### Segmentation data
 ```
+# Download Mask2Former Checkpoint
+cd Mask2Former
+mkdir checkpoints
+# download model to this directory [link](https://dl.fbaipublicfiles.com/maskformer/mask2former/coco/panoptic/maskformer2_swin_large_IN21k_384_bs16_100ep/model_final_f07440.pkl)
+
 python scripts/...
 ```
 
