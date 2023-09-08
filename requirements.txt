@@ -8,3 +8,4 @@ h5py
 submitit
 scikit-image
 ffmpeg==1.4
+Pillow==9.5.0
