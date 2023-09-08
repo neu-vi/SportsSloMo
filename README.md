@@ -19,6 +19,7 @@ We propose a challenging dataset consisting of high-resolution (≥720p) sports 
 1. [Requirements](#Requirements)
 1. [Video Frame Interpolation](#VideoFrameInterpolation)
 1. [Human-aware Loss Terms](#HumanLoss)
+1. [Acknowledgement](#Acknowledgement)
 1. [Reference](#Reference)
 1. [Contact](#Contact)
 
@@ -160,7 +161,7 @@ mkdir checkpoints
 TODO.
 
 
-### Acknowledgement
+## Acknowledgement
 Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EBME), [XVFI](https://github.com/JihyongOh/XVFI/tree/main#Test), [RIFE](https://github.com/megvii-research/ECCV2022-RIFE) and [softmax-splatting](https://github.com/sniklaus/softmax-splatting). We also borrow code from [Mask2Former](https://github.com/facebookresearch/Mask2Former), [YOLOv8](https://github.com/ultralytics/ultralytics), [ViTPose_unofficial](https://github.com/jaehyunnn/ViTPose_pytorch) and [ViTPose](https://github.com/ViTAE-Transformer/ViTPose). We sincerely thanks those authors for their great works. If you use our codes, please also consider cite their nice works.
 
 <!-- **Reference**:   -->
