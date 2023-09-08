@@ -24,6 +24,8 @@ We propose a challenging dataset consisting of high-resolution (≥720p) sports 
 #### Dataset intro
 Our dataset is targeted for human-centric scenarios covering various sports, and we provide over 8k long video clips that can be used for video frame interpolation, video super-resolution, group activity recognition and dynamic view synthesis.
 
+Video sequences of SportsSloMo dataset can be downloaded at the [link](https://vil.khoury.northeastern.edu/files/sportsslomo_video_seqs.zip).
+
 Our dataset has following directory format:
 
 ```
@@ -76,10 +78,25 @@ pip install cupy_cuda113==10.6.0
 pip install -U opencv-python
 ```
 
+## Human-aware Loss Terms
 
+TO improve the existing video frame interpolation models on our human-centric SportsSloMo benchmark, we introduce two loss terms considering the human-aware priors. We propose loss terms based on human segmentation in the panoptic setting and human keypoints estimation as extra supervision for intermediate frame synthesis.
 
+### Pipeline overview
+<center><img src="figures/pipeline.png" width="100%"></center>
 
+### Data preparation
+We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
 
+#### Keypoint data
+```
+python scripts/...
+```
+
+#### Segmentation data
+```
+python scripts/...
+```
 
 
 <!-- **Reference**:   -->
