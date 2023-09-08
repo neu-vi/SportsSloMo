@@ -17,6 +17,7 @@ We propose a challenging dataset consisting of high-resolution (≥720p) sports 
 ## Table of Contents
 1. [SportsSloMo Dataset](#SportsSloMoDataset)
 1. [Requirements](#Requirements)
+1. [Human-aware Loss Terms](#Human-awareLossTerms)
 1. [Reference](#Reference)
 1. [Contact](#Contact)
 
@@ -84,9 +85,12 @@ TO improve the existing video frame interpolation models on our human-centric Sp
 
 ### Pipeline overview
 <center><img src="figures/pipeline.png" width="100%"></center>
+Both of our proposed human-aware loss terms are model agnostic and can be easily integrated into any video frame interpolation approach.
 
 ### Data preparation
 We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
+#### Visualization of human keypoints and segmentation masks
+<center><img src="figures/kptseg.png" width="100%"></center>
 
 #### Keypoint data
 ```
@@ -97,6 +101,10 @@ python scripts/...
 ```
 python scripts/...
 ```
+
+### Training
+
+### Testing
 
 
 <!-- **Reference**:   -->
