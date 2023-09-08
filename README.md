@@ -90,7 +90,7 @@ Both of our proposed human-aware loss terms are model agnostic and can be easily
 ### Data preparation
 We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
 #### Visualization of human keypoints and segmentation masks
-<center><img src="figures/kptseg.png" width="50%"></center>
+<center><img src="figures/kptseg.png" width="40%"></center>
 
 #### Keypoint data
 ```
