@@ -15,13 +15,13 @@ We provide the video clips along with the code and trained weights for SportsSlo
 We propose a challenging dataset consisting of high-resolution (≥720p) sports videos with careful curation, tailored for human-centric scenarios. Our dataset covers 22 various sports categories with different content and motion patterns, including hockey, base- ball, skating, basketball, running, volleyball, etc.
 
 ## Table of Contents
-1. [SportsSloMoDataset](#SportsSloMo Dataset)
+1. [SportsSloMoDataset](#Dataset)
 1. [Requirements](#Requirements)
-1. [Human-awareLossTerms](#Human-aware Loss Terms)
+1. [Human-awareLossTerms](#HumanLoss)
 1. [Reference](#Reference)
 1. [Contact](#Contact)
 
-## SportsSloMo Dataset
+## Dataset
 #### Dataset intro
 Our dataset is targeted for human-centric scenarios covering various sports, and we provide over 8k long video clips that can be used for video frame interpolation, video super-resolution, group activity recognition and dynamic view synthesis.
 
@@ -94,7 +94,7 @@ sh make.sh
 
 ```
 
-## Human-aware Loss Terms
+## HumanLoss
 
 TO improve the existing video frame interpolation models on our human-centric SportsSloMo benchmark, we introduce two loss terms considering the human-aware priors. We propose loss terms based on human segmentation in the panoptic setting and human keypoints estimation as extra supervision for intermediate frame synthesis.
 
