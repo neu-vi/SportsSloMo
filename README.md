@@ -29,6 +29,8 @@ Our dataset is targeted for human-centric scenarios covering various sports, and
 
 Video sequences of SportsSloMo dataset can be downloaded at the [link](https://vil.khoury.northeastern.edu/files/sportsslomo_video_seqs.zip).
 
+**Note** that the data that we provide in the link is video files, additional processing is needed to extract frames from these video clips, please consider follow the step in the **Preparation** part below.
+
 Our dataset has following directory format:
 
 ```
@@ -130,6 +132,9 @@ Both of our proposed human-aware loss terms are model agnostic and can be easily
 
 ### Data preparation
 We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
+
+**Note** that large storage space is needed to store the extracted keypoints and segmentation masks, so make sure that there is enough storage space in your machine:)
+
 #### Visualization of human keypoints and segmentation masks
 <center><img src="figures/kptseg.png" width="60%"></center>
 
