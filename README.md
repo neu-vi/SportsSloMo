@@ -25,13 +25,13 @@ We propose a challenging dataset consisting of high-resolution (≥720p) sports 
 
 ## Dataset
 #### Dataset intro
-Our dataset is targeted for human-centric scenarios covering various sports, and we provide over 8k long video clips that can be used for video frame interpolation, video super-resolution, group activity recognition and dynamic view synthesis.
+Our dataset is targeted for human-centric scenarios covering various sports, and we provide over 8k long video clips that can be used for video frame interpolation, video super-resolution, group activity recognition, and dynamic view synthesis.
 
 Video sequences of SportsSloMo dataset can be downloaded at the [link](https://vil.khoury.northeastern.edu/files/sportsslomo_video_seqs.zip).
 
-**Note** that the data that we provide in the link is video files, additional processing is needed to extract frames from these video clips, please consider follow the step in the **Preparation** part below.
+**Note** that the data that we provide in the link is video files, additional processing is needed to extract frames from these video clips. Please consider following the step in the **Preparation** part below.
 
-Our dataset has following directory format:
+Our dataset has the following directory format:
 
 ```
 ├──── SportsSloMo_frames/
@@ -58,7 +58,7 @@ python scripts/extract_frames.py
 
 ## Requirements
 
-In this repo, we provide the environment setting and sample code needed for plugging in auxiliary losses into the [EBME](https://github.com/srcn-ivl/EBME) model, and other VFI models are also compatibale unless specific packages need to be installed.
+In this repo, we provide the environment setting and sample code needed for plugging in auxiliary losses into the [EBME](https://github.com/srcn-ivl/EBME) model, and other VFI models are also compatible unless specific packages need to be installed.
 
 Our code is implemented using PyTorch 1.12.1 and Cuda 11.3, and we use CuPy package for forward warping operation (check [softmax-splatting](https://github.com/sniklaus/softmax-splatting) for details).
 
@@ -100,7 +100,7 @@ sh make.sh
 
 ## VideoFrameInterpolation
 
-We provide intructions and code for conducting Video Frame Interpolation on our SportsSloMo dataset using the baseline [EBME](https://github.com/srcn-ivl/EBME) as example.
+We provide instructions and code for conducting Video Frame Interpolation on our SportsSloMo dataset using the baseline [EBME](https://github.com/srcn-ivl/EBME) as an example.
 
 ```
 cd SportsSloMo_EBME
@@ -116,21 +116,21 @@ bash train_SportsSloMo.sh
 Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
 ### Benchmark
-TODO.
+TODO. Coming soon.
 
 ### Demo
-TODO.
+TODO. Coming soon.
 
 
 ## HumanLoss
 
 To improve the existing video frame interpolation models on our human-centric SportsSloMo benchmark, we introduce two loss terms considering the human-aware priors. We propose loss terms based on human segmentation in the panoptic setting and human keypoints estimation as extra supervision for intermediate frame synthesis.
 
-### Pipeline overview
+### Pipeline Overview
 <center><img src="figures/pipeline.png" width="100%"></center>
 Both of our proposed human-aware loss terms are model agnostic and can be easily integrated into any video frame interpolation approach.
 
-### Data preparation
+### Data Preparation
 We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
 
 **Note** that large storage space is needed to store the extracted keypoints and segmentation masks, so make sure that there is enough storage space in your machine:)
@@ -162,12 +162,12 @@ mkdir checkpoints
 
 ```
 
-### Training
-TODO.
+### Auxiliary Loss Training
+TODO. Coming soon.
 
 
 ## Acknowledgement
-Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EBME), [XVFI](https://github.com/JihyongOh/XVFI/tree/main#Test), [RIFE](https://github.com/megvii-research/ECCV2022-RIFE) and [softmax-splatting](https://github.com/sniklaus/softmax-splatting). We also borrow code from [Mask2Former](https://github.com/facebookresearch/Mask2Former), [YOLOv8](https://github.com/ultralytics/ultralytics), [ViTPose_unofficial](https://github.com/jaehyunnn/ViTPose_pytorch) and [ViTPose](https://github.com/ViTAE-Transformer/ViTPose). We sincerely thanks those authors for their great works. If you use our codes, please also consider cite their nice works.
+Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EBME), [XVFI](https://github.com/JihyongOh/XVFI/tree/main#Test), [RIFE](https://github.com/megvii-research/ECCV2022-RIFE) and [softmax-splatting](https://github.com/sniklaus/softmax-splatting). We also borrow code from [Mask2Former](https://github.com/facebookresearch/Mask2Former), [YOLOv8](https://github.com/ultralytics/ultralytics), [ViTPose_unofficial](https://github.com/jaehyunnn/ViTPose_pytorch) and [ViTPose](https://github.com/ViTAE-Transformer/ViTPose). We sincerely thank those authors for their great works. If you use our codes, please also consider citing their nice works.
 
 <!-- **Reference**:   -->
 ## Reference
@@ -184,7 +184,7 @@ Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EB
 ```
 
 ## Contact
-If you have any question, please send an email to [[Jiaben Chen](https://jiabenchen.github.io)] - jic088@ucsd.edu
+If you have any questions, please send an email to [[Jiaben Chen](https://jiabenchen.github.io)] - jic088@ucsd.edu
 
 ## License
 The source codes and datasets can be freely used for research and education only. Any commercial use should get formal permission first.
