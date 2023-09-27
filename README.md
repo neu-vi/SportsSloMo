@@ -160,6 +160,9 @@ cd Mask2Former
 mkdir checkpoints
 # download model to this directory [link](https://dl.fbaipublicfiles.com/maskformer/mask2former/coco/panoptic/maskformer2_swin_large_IN21k_384_bs16_100ep/model_final_f07440.pkl)
 
+# Extract segmentation masks for auxiliary loss terms
+python extract_segmentation.py
+
 ```
 
 ### Auxiliary Loss Training
