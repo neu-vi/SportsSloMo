@@ -116,10 +116,12 @@ bash train_SportsSloMo.sh
 Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
 ### Benchmark
-TODO. Coming soon.
 
-### Demo
-TODO. Coming soon.
+```
+bash benchmark_sportsslomo.sh
+```
+
+We put the checkpoints of our pre-trained models on SportsSloMo dataset at [link](https://github.com/neu-vi/SportsSloMo/tree/main/SportsSloMo_EBME/checkpoints). Please set te data_root to where your store the SportsSloMo video frames.
 
 
 ## HumanLoss
