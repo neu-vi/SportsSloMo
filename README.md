@@ -150,9 +150,6 @@ mkdir checkpoints
 
 # Install Yolov8
 pip install ultralytics
-
-# Extract keypoints for auxiliary loss terms
-python extract_keypoints.py
 ```
 
 #### Segmentation data
@@ -168,7 +165,15 @@ python extract_segmentation.py
 ```
 
 ### Auxiliary Loss Training
-TODO. Coming soon.
+```
+# Train the auxiliary loss with keypoints
+
+# Build a soft link of ViTPose_pytorch to core/modules
+cd core/modules
+ln -S SportsSloMo/ViTPose_pytorch
+
+bash train_sportsslomo_kptaux.sh
+```
 
 
 ## Acknowledgement
