@@ -1,0 +1,2 @@
+#!/bin/bash
+CUDA_VISIBLE_DEVICES=0 python3 -m torch.distributed.launch --nproc_per_node=1 --master_port=10069 -m tools.train_sportsslomo_kptloss --world_size=1 --data_root YOURPATH_TO_SportsSloMo_frames --exp_name sportsslomo_aux_kpt --resume 1 --batch_size 4 --nr_data_worker 8 --crop_h 640 --crop_w 640
