@@ -72,7 +72,7 @@ def train(ppl, dataset_cfg_dict, optimizer_cfg_dict):
     save_interval = int(optimizer_cfg_dict["save_interval"])
     init_lr = optimizer_cfg_dict.get("init_lr", 2e-5)
     min_lr = optimizer_cfg_dict.get("min_lr", 2e-6)
-    loss_type = optimizer_cfg_dict.get("loss_type", "l2+0.1census+1auxkpt")
+    loss_type = optimizer_cfg_dict.get("loss_type", "l2+0.1census+auxkpt")
 
     step = 1
 
