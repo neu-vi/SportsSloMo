@@ -121,7 +121,7 @@ Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this fi
 bash benchmark_sportsslomo.sh
 ```
 
-We put the checkpoints of our pre-trained models on SportsSloMo dataset at [link](https://github.com/neu-vi/SportsSloMo/tree/main/SportsSloMo_EBME/checkpoints). Please set te data_root to where your store the SportsSloMo video frames.
+We put the checkpoints of our pre-trained models on SportsSloMo dataset at [link](https://github.com/neu-vi/SportsSloMo/tree/main/SportsSloMo_EBME/checkpoints). Please set te data_root to where your store the SportsSloMo video frames. The checkpoints with suffix "SportsSloMo" are our trained models with auxiliary losses, the checkpoints with suffix "EBME" are our trained baseline models.
 
 
 ## HumanLoss
@@ -133,14 +133,14 @@ To improve the existing video frame interpolation models on our human-centric Sp
 Both of our proposed human-aware loss terms are model agnostic and can be easily integrated into any video frame interpolation approach.
 
 ### Data Preparation
-We provide scripts and instructions to acquire ground-truth detected keypoints and segmentation masks for our human-aware loss terms.
+We provide scripts and instructions to acquire ground-truth segmentation masks for our human-aware loss terms.
 
-**Note** that large storage space is needed to store the extracted keypoints and segmentation masks, so make sure that there is enough storage space in your machine:)
+**Note** that large storage space is needed to store the extracted data, so make sure that there is enough storage space in your machine:)
 
 #### Visualization of human keypoints and segmentation masks
 <center><img src="figures/kptseg.png" width="60%"></center>
 
-#### Keypoint data
+#### Keypoint Preparation
 ```
 # Install ViTPose_pytorch 
 git clone https://github.com/jaehyunnn/ViTPose_pytorch.git
@@ -152,7 +152,7 @@ mkdir checkpoints
 pip install ultralytics
 ```
 
-#### Segmentation data
+#### Segmentation Preparation
 ```
 # Download Mask2Former Checkpoint
 cd Mask2Former
@@ -176,6 +176,23 @@ bash train_sportsslomo_kptaux.sh
 ```
 Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
+```
+# Train the auxiliary loss with segmentation masks
+
+# Unzip the modified version of detectron 2
+cd SportsSloMo_EBME/core/modules
+unzip detectron2_modify.zip
+
+cd ../../
+bash train_sportsslomo_segaux.sh
+```
+Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames. Remember to change "self.seg_root" in core.dataset.SportsSloMoAuxDataset to your own path storing segmentation masks.
+
+```
+# Train the full auxiliary loss
+bash train_sportsslomo_aux.sh
+```
+Again, adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
 ## Acknowledgement
 Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EBME), [XVFI](https://github.com/JihyongOh/XVFI/tree/main#Test), [RIFE](https://github.com/megvii-research/ECCV2022-RIFE) and [softmax-splatting](https://github.com/sniklaus/softmax-splatting). We also borrow code from [Mask2Former](https://github.com/facebookresearch/Mask2Former), [YOLOv8](https://github.com/ultralytics/ultralytics), [ViTPose_unofficial](https://github.com/jaehyunnn/ViTPose_pytorch) and [ViTPose](https://github.com/ViTAE-Transformer/ViTPose). We sincerely thank those authors for their great works. If you use our codes, please also consider citing their nice works.
