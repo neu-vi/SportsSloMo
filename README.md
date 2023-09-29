@@ -169,11 +169,12 @@ python extract_segmentation.py
 # Train the auxiliary loss with keypoints
 
 # Build a soft link of ViTPose_pytorch to core/modules
-cd core/modules
-ln -S SportsSloMo/ViTPose_pytorch
+cd SportsSloMo_EBME/core/modules
+ln -s ../../../ViTPose_pytorch/ .
 
 bash train_sportsslomo_kptaux.sh
 ```
+Adjust CUDA_VISIBLE_DEVICES and other distributed training parameters in this file according to your machine, and set the data_root to where you store the SportsSloMo video frames.
 
 
 ## Acknowledgement
