@@ -13,7 +13,7 @@ import torch.nn.functional as F
 from .loss import EPE, Ternary, LapLoss
 from core.modules.bi_flownet import BiFlowNet
 from core.modules.fusionnet import FusionNet
-from core.heatmap_infer import HeatmapInfer
+from core.heatmap_loss import HeatmapInfer
 
 
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -91,6 +91,7 @@ class KptAuxPipeline:
         # Restart the experiment from last saved model, by loading the state of the optimizer
         if resume:
             assert training, "Finetuning EBME with keypoint auxiliary loss."
+            print("Restart optimizer state to fintune with keypoint loss.")
 
 
     def train(self):
@@ -183,7 +184,7 @@ class KptAuxPipeline:
         return interp_img, bi_flow
 
     def train_one_iter(self, img0, img1, gt, learning_rate=0,
-            bi_flow_gt=None, time_period=0.5, loss_type="l2+0.1census"):
+            bi_flow_gt=None, time_period=0.5, loss_type="l2+0.1census+auxkpt"):
         for param_group in self.optimG.param_groups:
             param_group['lr'] = learning_rate
         self.train()
@@ -215,7 +216,6 @@ class KptAuxPipeline:
             loss_interp_lapl1 = (self.laploss(interp_img, gt)).mean()
             loss_G = loss_l2 + loss_interp_lapl1
         elif loss_type == "l2+0.1census+auxkpt":
-            interp_img.retain_grad()
             loss_l2 = (((interp_img - gt) ** 2 + 1e-6) ** 0.5).mean()
             loss_ter = 0.1 * self.ter(interp_img, gt).mean()
             predicted_kpt, gt_kpt = self.HeatmapInfer(interp_img, gt)
