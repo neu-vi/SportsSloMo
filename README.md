@@ -4,7 +4,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/neu-vi/SportsSloMo?style=social)](https://github.com/neu-vi/SportsSloMo)
 [![Demo views](https://img.shields.io/youtube/views/FNMqoETB1sU)](https://www.youtube.com/watch?v=FNMqoETB1sU)
 
-**This is the official repository of SportsSloMo**
+**This is the official repository of SportsSloMo (CVPR 2024)**
 
 \[[ArXiv Paper](https://arxiv.org/abs/2308.16876)\] \[[Demo(YouTube)](https://www.youtube.com/watch?v=FNMqoETB1sU)\] \[[Project Page](https://neu-vi.github.io/SportsSlomo/)\]
 
@@ -203,11 +203,11 @@ Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EB
 > 
 **BibTeX**
 ```bibtex
-@article{chen2023sportsslomo,
+@inproceedings{chen2023sportsslomo,
   title={SportsSloMo: A New Benchmark and Baselines for Human-centric Video Frame Interpolation},
   author={Chen, Jiaben and Jiang, Huaizu},
-  journal={arXiv preprint arXiv:2308.16876},
-  year={2023}
+  booktitle={CVPR},
+  year={2024}
 }
 ```
 
@@ -215,4 +215,4 @@ Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EB
 If you have any questions, please send an email to [[Jiaben Chen](https://jiabenchen.github.io)] - jic088@ucsd.edu
 
 ## License
-The source codes and datasets can be freely used for research and education only. Any commercial use should get formal permission first.
+The source codes and datasets can be freely used for research and education only. Any commercial use should get formal permission first. For such requests, please reach out to [Prof. Huaizu Jiang](emailto:h.jiang@northeastern.edu).
