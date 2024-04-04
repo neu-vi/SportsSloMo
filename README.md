@@ -1,4 +1,4 @@
-# SportsSloMo 	
+# SportsSloMo (CVPR 2024)
 
 [![ArXiv](https://img.shields.io/badge/ArXiv-Paper-<COLOR>.svg)](https://arxiv.org/abs/2308.16876)
 [![GitHub Stars](https://img.shields.io/github/stars/neu-vi/SportsSloMo?style=social)](https://github.com/neu-vi/SportsSloMo)
@@ -215,4 +215,4 @@ Our code is based on the implementation of [EBME](https://github.com/srcn-ivl/EB
 If you have any questions, please send an email to [[Jiaben Chen](https://jiabenchen.github.io)] - jic088@ucsd.edu
 
 ## License
-The source codes and datasets can be freely used for research and education only. Any commercial use should get formal permission first. For such requests, please reach out to [Prof. Huaizu Jiang](emailto:h.jiang@northeastern.edu).
+The source codes and datasets can be freely used for research and education only. Any commercial use should get formal permission first. For such requests, please reach out to [Prof. Huaizu Jiang](https://jianghz.me) - h.jiang@northeastern.edu.
